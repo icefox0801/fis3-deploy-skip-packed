@@ -37,6 +37,7 @@ module.exports = function(options, modified, total, callback) {
 
   while ((file = modified[i--])) {
     if (file.map && (
+        options.skipInline && file.isInline ||
         options.skipPackedToPkg && file.map.pkg ||
         options.skipPackedToAIO && file.map.aioPkg ||
         options.skipPackedToCssSprite && file.map.cssspritePkg)) {
@@ -53,6 +54,7 @@ module.exports = function(options, modified, total, callback) {
   i = total.length - 1;
   while ((file = total[i--])) {
     if (file.map && (
+        options.skipInline && file.isInline ||
         options.skipPackedToPkg && file.map.pkg ||
         options.skipPackedToAIO && file.map.aioPkg ||
         options.skipPackedToCssSprite && file.map.cssspritePkg)) {
@@ -70,6 +72,7 @@ module.exports = function(options, modified, total, callback) {
 };
 
 module.exports.options = {
+  skipInline: true,
   skipPackedToPkg: true,
   skipPackedToAIO: true,
   skipPackedToCssSprite: true,
