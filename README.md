@@ -24,6 +24,7 @@ fis.match('**', {
 
 ## 配置项说明
 
+* `skipInline` 默认 `true` 是否过滤掉被内嵌的文件
 * `skipPackedToPkg` 默认 `true` 是否过滤掉被打包的文件
 * `skipPackedToAIO` 默认 `true` 是否过滤掉被 AllInOne 打包的文件
 * `skipPackedToCssSprite` 默认为 `true` 是否过滤掉被 css sprite 合并的文件。
